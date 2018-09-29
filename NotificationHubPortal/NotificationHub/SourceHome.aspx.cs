@@ -27,14 +27,21 @@ namespace NotificationHub
                 tableRow.Cells.Add(cell);
                 Label label = new Label();
                 PlaceHolder1.Controls.Add(label);
-                label.Text = sourecDal.Sourceslist[count].Name + " \t\t";                                                                                                  
-
+                label.Text = sourecDal.Sourceslist[count].Name;
+                label.Width = 200;
+                
                 HyperLink Edit = new HyperLink();
                 PlaceHolder1.Controls.Add(Edit);
-                Edit.Text = "EDIT"+" \t";
+                Edit.Text = "EDIT";
+                Edit.NavigateUrl= ("~/EditSource.aspx?id=" + Convert.ToString(sourecDal.Sourceslist[count].Id));
+                Edit.Width = 150;
                 HyperLink Delete = new HyperLink();
                 PlaceHolder1.Controls.Add(Delete);
-                Delete.Text = "DELETE";
+                Delete.Text = "DELETE"+"<br/>"+"<br/>";
+                Delete.NavigateUrl = ("~/DeleteSource.aspx?id="+ Convert.ToString( sourecDal.Sourceslist[count].Id));
+
+
+                //Delete.Width = 600;
 
 
 

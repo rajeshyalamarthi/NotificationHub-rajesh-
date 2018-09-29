@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DAL.Repository;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -16,6 +17,14 @@ namespace NotificationHub
 
         protected void Button2_Click(object sender, EventArgs e)
         {
+
+            SourecDal sourcerepo = new SourecDal();
+
+            sourcerepo.Entersource(TextBox1.Text+"\n");
+
+
+
+
             Response.Redirect("SourceHome.aspx");
         }
 
